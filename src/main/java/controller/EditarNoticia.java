@@ -25,13 +25,14 @@ public class EditarNoticia extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		Integer id = (Integer) request.getAttribute("ID");
-		String nome = (String) request.getAttribute("nome");
-		String resumo = (String) request.getAttribute("resumo");
-		String assunto = (String) request.getAttribute("assunto");
-		String fonte = (String) request.getAttribute("fonte");
-		String data = (String) request.getAttribute("data");
-		String conteudo = (String) request.getAttribute("conteudo");
+		Integer id = Integer.parseInt(request.getParameter("IDD"));
+		String nome = (String) request.getParameter("nomee");
+		String resumo = (String) request.getParameter("resumoo");
+		String assunto = (String) request.getParameter("assunto");
+		System.out.println(assunto);
+		String fonte = (String) request.getParameter("fonte");
+		String data = (String) request.getParameter("data");
+		String conteudo = (String) request.getParameter("conteudo");
 		Noticia noticia = new Noticia();
 		noticia.setId(id);
 		noticia.setNome(nome);

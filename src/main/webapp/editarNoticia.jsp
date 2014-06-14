@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -28,10 +29,10 @@
 		</script>
 	</head>
 	<body>
-		<form action="UpdateNoticia" method="post">
+		<form action="EditarNoticia" method="post">
 		<input type="text" name="IDD" value="${noticia.id}"><br />
 		Nome: <input type="text" name="nomee" required="required" value="${noticia.nome}"><br />
-		Resumo: <input type="text" name="resumo" required="required" value="${noticia.resumo}"><br />
+		Resumo: <input type="text" name="resumoo" required="required" value="${noticia.resumo}"><br />
 		Assunto: <input type="text" name="assunto" value="${noticia.assunto}"><br />
 		<br>      	   
 		Fonte: <input type="text" name="fonte" value="${noticia.fonte}"><br />

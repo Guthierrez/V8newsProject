@@ -168,7 +168,7 @@
 					<li>
 						<h3><a class="mostraVideo" href="#">Porta dos fundos: Operação</a></h3>
 						<div class="video" id="videoevidente">
-							<iframe width="300" height="250" src="//www.youtube.com/embed/PkhuvejiDoI"  allowfullscreen></iframe>
+							<iframe width="300" height="250" src="//www.youtube.com/embed/PkhuvejiDoI"></iframe>
 						</div>
 					</li>
 					<li>

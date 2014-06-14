@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -32,7 +33,7 @@
 		Nome: <input type="text" name="nome" required="required"><br />
 		Resumo: <input type="text" name="resumo" required="required"><br />
 		Assunto: <input type="text" name="assunto"><br />
-		Categoria: <input type="radio" name="categoria" value="noticia">Notícias
+		Categoria: <input type="radio" name="categoria" value="noticia">NotÃ­cias
 		      	   <input type="radio" name="categoria" value="esporte">Esportes
 		      	   <input type="radio" name="categoria" value="tecnologia">Tecnologia
 		      	   <input type="radio" name="categoria" value="variedades">Variedades

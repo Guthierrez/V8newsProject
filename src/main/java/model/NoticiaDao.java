@@ -64,11 +64,11 @@ public class NoticiaDao {
 		try{
 			Connection con = ConexaoDao.getInstancia().getConexao();
 			Statement st = con.createStatement();
-			st.executeUpdate("UPDATE noticias"
+			st.executeUpdate("UPDATE noticias "
 					+  "SET nome='"+noticia.getNome()+"', resumo='"+noticia.getResumo()+"',"
 					+  "assunto='"+noticia.getAssunto()+"', fonte='"+noticia.getFonte()+"',"
 					+  "data='"+noticia.getData()+"', conteudo='"+noticia.getConteudo()+"'"
-					+  "WHERE id='"+noticia.getId()+"'");
+					+  " WHERE id="+noticia.getId()+"");
 		}catch(SQLException e){
 			System.out.println(e.getMessage());
 		}
