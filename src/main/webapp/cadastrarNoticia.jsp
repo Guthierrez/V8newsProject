@@ -33,10 +33,10 @@
 		Nome: <input type="text" name="nome" required="required"><br />
 		Resumo: <input type="text" name="resumo" required="required"><br />
 		Assunto: <input type="text" name="assunto"><br />
-		Categoria: <input type="radio" name="categoria" value="noticia">Notícias
-		      	   <input type="radio" name="categoria" value="esporte">Esportes
-		      	   <input type="radio" name="categoria" value="tecnologia">Tecnologia
-		      	   <input type="radio" name="categoria" value="variedades">Variedades
+		Categoria: <input type="radio" name="categoria" value="Noticia">Notícias
+		      	   <input type="radio" name="categoria" value="Esporte">Esportes
+		      	   <input type="radio" name="categoria" value="Tecnologia">Tecnologia
+		      	   <input type="radio" name="categoria" value="Variedades">Variedades
 		<br>      	   
 		Fonte: <input type="text" name="fonte"><br />
 		Data: <input type="date" name="data"><br />

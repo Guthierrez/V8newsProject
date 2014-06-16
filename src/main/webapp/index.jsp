@@ -36,95 +36,41 @@
 				<ul>
 					<c:forEach items="${noticias}" var="noticia">
 						<li>
-						<img alt="new1" src="${noticia.imagem}">
+						<img alt="img" src="${noticia.imagem}">
 						<div class="barra_semi-transparente">
-							<p><a href="noticias/professor-ufg-mit.jsp"><b>${noticia.nome}</b>
+							<p><a href="LerNoticia?ID=${noticia.id}"><b>${noticia.nome}</b>
 							<br>${noticia.resumo}</a></p>
 						</div>
 						</li>
 					</c:forEach>
 				</ul>
 		    </div>
-		
-			<div class="maisNoticias">
-			<h1 class="titleMaisNoticias"><b class="TituloNoticias">Notícias</b></h1>
-			<div class="rodapeDestaques"></div>
-			<ul>
-				<li>
-				<p class="assunto">Reconhecimento</p>
-				<a href="/noticias/professor-ufg-mit.jsp"><img src="noticias/img/professor-ufg-mit.jpg" width="155" height="110">
-				<b class="tituloNoticias">MIT lista professor da UFG entre os dez brasileiros mais inovadores</b><br>
-				<b class="descricao">Pesquisador desenvolveu teste de baixíssimo custo para análises clínicas.
-				Entidade dos EUA pré-selecionou projeto para disputa internacional.</b></a>
-				</li>
-			</ul>
-			</div>
-		
-		
-
-		<!--  MAIS NOTICIAS DE ESPORTES -->		
-			<div class="maisNoticias">
-			<h1 class="titleMaisNoticias"><b class="tituloEsportes">Esportes</b></h1>
-			<div class="rodapeDestaques"></div>
-			<ul>
-				<li>
-				<p class="assunto">Atletismo</p>
-				<a href="esportes/5-dores-quem-corre.jsp"><img src="esportes/img/5-dores-quem-corre.jpg" width="155" height="110">
-				<b class="tituloEsportes">As cinco maiores dores de quem corre</b><br>
-				<b class="descricao">Atletas novatos estão acostumados e não sabem identificar gravidade das lesões causadas pela corrida. Especialista ajuda a lidar com problema.</b></a>
-				</li>	
-			</ul>
-			</div>
-
-		<div class="maisNoticias">
-			<h1 class="titleMaisNoticias"><b class="TituloTecnologia">Tecnologia</b></h1>
-			<div class="rodapeDestaques"></div>
-			<ul>
-				<li>
-				<p class="assunto">Inovação</p>
-				<a href="tecnologia/olherao-3g-wifi.jsp"><img src="tecnologia/img/olherao-3g-wifi.jpg" width="155" height="110">
-				<b class="tituloTecnologia">Começam a ser produzidos orelhões 3G</b><br>
-				<b class="descricao">Parar tentar evitar desaparecimento, tecnologia é absorvida por aparelhos.
-				Por dia, cerca de 120 orelhões, em média, somem das ruas do país</b></a>
-				</li>
-			</ul>
-			</div>
 			
-			<div class="maisNoticias">
-			<h1 class="titleMaisNoticias"><b class="TituloVariedades">Variedades</b></h1>
-			<div class="rodapeDestaques"></div>
-			<ul>
-				<li>
-				<p class="assunto">Saúde</p>
-				<a href="variedades/saude-alimentos-coloridos.jsp"><img src="variedades/img/saude-alimentos-coloridos.jpg" width="155" height="110">
-				<b class="tituloVariedades">Alimentos coloridos, tudo para uma alimentação balanceada</b><br>
-				<b class="descricao">Os legumes, as frutas e oleaginosas favorecem a manutenção da saúde além de formar um prato mais bonito e atrativo.</b></a>
-				</li>
-			</ul>
-			</div>
+			<c:forEach items="${noticias}" var="noticia">
+				<div class="maisNoticias">
+					<h1 class="titleMaisNoticias"><b class="TituloNoticias">${noticia.categoria}</b></h1>
+					<div class="rodapeDestaques"></div>
+					<ul>
+						<li>
+						<p class="assunto">${noticia.assunto}</p>
+						<a href="LerNoticia?ID=${noticia.id}"><img src="${noticia.imagem}" width="155" height="110">
+						<b class="tituloNoticias">${noticia.nome}</b><br>
+						<b class="descricao">${noticia.resumo}</b></a>
+						</li>
+					</ul>
+				</div>
+			</c:forEach>
+		
+
 			<div class="demaisNoticias">
 				<h2 class="titleDestaques">Mais notícias</h2>
 				<table>
+					<c:forEach items="${noticias}" var="noticia">
 					<tr>
-					  <td>05/06/2014 -</td>
-					  <td><a href="variedades/saude-alimentos-coloridos.jsp">Alimentos coloridos, tudo para uma alimentação balanceada</a></td>
+					  <td>${noticia.data}</td>
+					  <td><a href="LerNoticia?ID=${noticia.id}">${noticia.nome}</a></td>
 					</tr>
-					<tr>
-					  <td>11/06/2014 -</td>
-					  <td><a href="noticias/professor-ufg-mit.jsp">MIT lista professor da UFG entre os dez brasileiros mais inovadores</a></td>
-					</tr>
-					<tr>
-					  <td>05/06/2014 -</td>
-					  <td><a href="esportes/5-dores-quem-corre.jsp">As cinco maiores dores de quem corre</a></td>
-					</tr>
-					<tr>
-					  <td>05/06/2014 -</td>
-					  <td><a href="tecnologia/olherao-3g-wifi.jsp">Começam a ser produzidos orelhões 3G</a></td>
-					</tr>
-					<tr>
-					  <td>05/06/2014 -</td>
-					  <td><a href="variedades/saude-alimentos-coloridos.jsp">Alimentos coloridos, tudo para uma alimentação balanceada</a></td>
-					</tr>
+					</c:forEach>
 				</table>
 			</div>
 		</section>
@@ -141,14 +87,12 @@
 				<h3>Mais lidas da semana</h3>
 				<div class="rodapeDestaques"></div>
 				<ol class="setaMaisLidas">
-					<li><img alt="" src="img/logos/seta.png"><a href="noticias/professor-ufg-mit.jsp">MIT lista professor da UFG entre os dez brasileiros mais inovadores</a></li>
-					<li><img alt="" src="img/logos/seta.png"><a href="esportes/5-dores-quem-corre.jsp">As cinco maiores dores de quem corre</a></li>
-					<li><img alt="" src="img/logos/seta.png"><a href="tecnologia/olherao-3g-wifi.jsp">Começam a ser produzidos alguns orelhões com tecnologia 3G</a></li>
-					<li><img alt="" src="img/logos/seta.png"><a href="variedades/saude-alimentos-coloridos.jsp">Alimentos coloridos, tudo para uma alimentação balanceada</a></li>
-					<li><img alt="" src="img/logos/seta.png"><a href="noticias/professor-ufg-mit.jsp">MIT lista professor da UFG entre os dez brasileiros mais inovadores</a></li>
-					<li><img alt="" src="img/logos/seta.png"><a href="esportes/5-dores-quem-corre.jsp">As cinco maiores dores de quem corre</a></li>
-					<li><img alt="" src="img/logos/seta.png"><a href="tecnologia/olherao-3g-wifi.jsp">Começam a ser produzidos alguns orelhões com tecnologia 3G</a></li>
-					<li><img alt="" src="img/logos/seta.png"><a href="variedades/saude-alimentos-coloridos.jsp">Alimentos coloridos, tudo para uma alimentação balanceada</a></li>
+					<c:forEach items="${noticias}" var="noticia">	
+						<li><img alt="" src="img/logos/seta.png"><a href="LerNoticia?ID=${noticia.id}">${noticia.nome }</a></li>
+					</c:forEach>
+					<c:forEach items="${noticias}" var="noticia">	
+						<li><img alt="" src="img/logos/seta.png"><a href="LerNoticia?ID=${noticia.id}">${noticia.nome }</a></li>
+					</c:forEach>
 				</ol>
 			</div>
 			

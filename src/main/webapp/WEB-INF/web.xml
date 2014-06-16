@@ -22,4 +22,14 @@
     <servlet-name>Inicio</servlet-name>
     <url-pattern>Inicio</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LerNoticia</display-name>
+    <servlet-name>LerNoticia</servlet-name>
+    <servlet-class>controller.LerNoticia</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LerNoticia</servlet-name>
+    <url-pattern>/LerNoticia</url-pattern>
+  </servlet-mapping>
 </web-app>
