@@ -109,4 +109,29 @@ public class NoticiaDao {
 		return noticias;
 	}
 	
+	public List<Noticia> obterCategoriaNoticias(String categoria){
+		List<Noticia> noticias = new ArrayList<Noticia>();
+		try{
+			Connection con = ConexaoDao.getInstancia().getConexao();
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery("select * from noticias where categoria='"+categoria+"'");
+		while (rs.next()){
+			Noticia noticia = new Noticia();
+			noticia.setId(rs.getInt("id"));
+			noticia.setNome(rs.getString("nome"));
+			noticia.setResumo(rs.getString("resumo"));
+			noticia.setAssunto(rs.getString("assunto"));
+			noticia.setCategoria(rs.getString("categoria"));
+			noticia.setFonte(rs.getString("fonte"));
+			noticia.setData(rs.getString("data"));
+			noticia.setImagem(rs.getString("imagem"));
+			noticia.setConteudo(rs.getString("conteudo"));
+			noticias.add(noticia);
+		}
+		}catch(SQLException e){
+			System.err.println(e.getMessage());
+		}
+		return noticias;
+	}
+	
 }

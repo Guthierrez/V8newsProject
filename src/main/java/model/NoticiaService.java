@@ -38,4 +38,7 @@ public class NoticiaService {
 	public List<Noticia> obterTodasNoticias(){
 		return noticiaDao.obterTodasNoticas();
 	}
+	public List<Noticia> obterCategoriaNoticias(String categoria){
+		return noticiaDao.obterCategoriaNoticias(categoria);
+	}
 }

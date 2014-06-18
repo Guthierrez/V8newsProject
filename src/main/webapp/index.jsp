@@ -16,11 +16,11 @@
 		
 		<nav>
 			<ul id="menuTopo">
-				<li><a href="./index.jsp"><b class="home">Início</b></a></li>
-				<li><a href="./noticias/index.jsp"><b class="noticias">Notícias</b></a></li>
-				<li><a href="./esportes/index.jsp"><b class="esportes">Esportes</b></a></li>
-				<li><a href="./tecnologia/index.jsp"><b class="tecnologia">Tecnologia</b></a></li>
-				<li><a href="./variedades/index.jsp"><b class="variedades">Variedades</b></a></li>
+				<li><a href="Inicio"><b class="home">Início</b></a></li>
+				<li><a href="Ver?categoria=Noticia"><b class="noticias">Notícias</b></a></li>
+				<li><a href="Ver?categoria=Esporte"><b class="esportes">Esportes</b></a></li>
+				<li><a href="Ver?categoria=Tecnologia"><b class="tecnologia">Tecnologia</b></a></li>
+				<li><a href="Ver?categoria=Variedades"><b class="variedades">Variedades</b></a></li>
 			</ul>
 		</nav>
 		
@@ -48,13 +48,13 @@
 			
 			<c:forEach items="${noticias}" var="noticia">
 				<div class="maisNoticias">
-					<h1 class="titleMaisNoticias"><b class="TituloNoticias">${noticia.categoria}</b></h1>
+					<h1 class="titleMaisNoticias"><b class="${noticia.categoria}">${noticia.categoria}</b></h1>
 					<div class="rodapeDestaques"></div>
 					<ul>
 						<li>
 						<p class="assunto">${noticia.assunto}</p>
 						<a href="LerNoticia?ID=${noticia.id}"><img src="${noticia.imagem}" width="155" height="110">
-						<b class="tituloNoticias">${noticia.nome}</b><br>
+						<b class="${noticia.categoria}">${noticia.nome}</b><br>
 						<b class="descricao">${noticia.resumo}</b></a>
 						</li>
 					</ul>
@@ -137,11 +137,11 @@
 				<div class="sobre">Sobre</div>
 			</div>
 			<ol class="menuRodape">
-				<li><a href="index.jsp">Início</a></li>
-				<li><a href="noticias/index.jsp" class="tituloNoticias">Notícias</a></li>
-				<li><a href="esportes/index.jsp" class="tituloEsportes">Esportes</a></li>
-				<li><a href="tecnologia/index.jsp" class="tituloTecnologia">Tecnologia</a></li>
-				<li><a href="variedades/index.jsp" class="tituloVariedades">Variedades</a></li>
+				<li><a href="Inicio">Início</a></li>
+				<li><a href="Ver?categoria=Noticia"><b class="tituloNoticias">Notícias</b></a></li>
+				<li><a href="Ver?categoria=Esporte"><b class="tituloEsportes">Esportes</b></a></li>
+				<li><a href="Ver?categoria=Tecnologia"><b class="tituloTecnologia">Tecnologia</b></a></li>
+				<li><a href="Ver?categoria=Variedades"><b class="tituloVariedades">Variedades</b></a></li>
 				<li><a href="#">Voltar ao topo</a></li>
 			</ol>
 		</footer>

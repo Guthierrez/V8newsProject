@@ -1,0 +1,11 @@
+create table Noticias(
+	id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+	nome varchar(100),
+	resumo varchar(250),
+	assunto varchar(20),
+	categoria varchar(20),
+	fonte varchar(30),
+	data varchar(15),
+	imagem varchar(200),
+	conteudo long varchar
+)

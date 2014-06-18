@@ -96,10 +96,10 @@ background: black;  opacity:0.90; filter:alpha(opacity = 90); display:none; bord
 .assunto{font-family: Arial; font-weight: bold; color:gray; font-size: 12px; margin-bottom: 3px; }
 .descricao{font-family: Arial; font-weight: 400; font-size: 12px; font-style: oblique; color:black;}
 
-.tituloEsportes{font-family: Arial; font-size: 19px; color:#399B00; font-weight: bolder; margin-top: 15px;}
-.tituloNoticias{font-family: Arial; font-size: 19px; color:#A50006; font-weight: bolder; margin-top: 15px;}
-.tituloTecnologia{font-family: Arial; font-size: 19px; color:#002DB2; font-weight: bolder; margin-top: 15px;}
-.tituloVariedades{font-family: Arial; font-size: 19px; color:#FF4500; font-weight: bolder; margin-top: 15px;}
+.Esporte{font-family: Arial; font-size: 19px; color:#399B00; font-weight: bolder; margin-top: 15px;}
+.Noticia{font-family: Arial; font-size: 19px; color:#A50006; font-weight: bolder; margin-top: 15px;}
+.Tecnologia{font-family: Arial; font-size: 19px; color:#002DB2; font-weight: bolder; margin-top: 15px;}
+.Variedades{font-family: Arial; font-size: 19px; color:#FF4500; font-weight: bolder; margin-top: 15px;}
 
 .demaisNoticias{clear:both; padding-top: 20px; margin-left: 10px;}
 table{margin-top: 10px; margin-left: 10px;}

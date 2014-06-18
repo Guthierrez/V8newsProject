@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="pt-br">
 	<head>
 		<link rel="stylesheet" type="text/css" href="Esporte/css/esportes.css">
@@ -23,11 +24,11 @@
 		
 		<nav>
 			<ul id="menuTopo">
-				<li><a href="../index.jsp"><b class="home">Início</b></a></li>
-				<li><a href="../noticias/index.jsp"><b class="noticias">Notícias</b></a></li>
-				<li><a href="../esportes/index.jsp"><b class="esportes">Esportes</b></a></li>
-				<li><a href="../tecnologia/index.jsp"><b class="tecnologia">Tecnologia</b></a></li>
-				<li><a href="../variedades/index.jsp"><b class="variedades">Variedades</b></a></li>
+				<li><a href="Inicio"><b class="home">Início</b></a></li>
+				<li><a href="Ver?categoria=Noticia"><b class="noticias">Notícias</b></a></li>
+				<li><a href="Ver?categoria=Esporte"><b class="esportes">Esportes</b></a></li>
+				<li><a href="Ver?categoria=Tecnologia"><b class="tecnologia">Tecnologia</b></a></li>
+				<li><a href="Ver?categoria=Variedades"><b class="variedades">Variedades</b></a></li>
 			</ul>
 		</nav>
 			
@@ -54,12 +55,9 @@
 				<h3>Mais lidas da semana</h3>
 				<div class="rodapeDestaques"></div>
 				<ol class="setaMaisLidas">
-					<li><img alt="" src="img/logos/seta.png"><a href="../noticias/professor-ufg-mit.jsp">MIT lista professor da UFG entre os dez brasileiros mais inovadores</a></li>
-					<li><img alt="" src="img/logos/seta.png"><a href="../noticias/professor-ufg-mit.jsp">MIT lista professor da UFG entre os dez brasileiros mais inovadores</a></li>
-					<li><img alt="" src="img/logos/seta.png"><a href="../noticias/professor-ufg-mit.jsp">MIT lista professor da UFG entre os dez brasileiros mais inovadores</a></li>
-					<li><img alt="" src="img/logos/seta.png"><a href="../noticias/professor-ufg-mit.jsp">MIT lista professor da UFG entre os dez brasileiros mais inovadores</a></li>
-					<li><img alt="" src="img/logos/seta.png"><a href="../noticias/professor-ufg-mit.jsp">MIT lista professor da UFG entre os dez brasileiros mais inovadores</a></li>
-
+					<c:forEach items="${noticias}" var="n">	
+						<li><img alt="" src="img/logos/seta.png"><a href="LerNoticia?ID=${n.id}">${n.nome}</a></li>
+					</c:forEach>
 				</ol>
 			</div>
 			
@@ -81,11 +79,11 @@
 				<div class="sobre">Sobre</div>
 			</div>
 			<ol class="menuRodape">
-				<li><a href="../index.jsp">Início</a></li>
-				<li><a href="../noticias/index.jsp" class="tituloNoticias">Notícias</a></li>
-				<li><a href="../esportes/index.jsp" class="tituloEsportes">Esportes</a></li>
-				<li><a href="../tecnologia/index.jsp" class="tituloTecnologia">Tecnologia</a></li>
-				<li><a href="../variedades/index.jsp" class="tituloVariedades">Variedades</a></li>
+				<li><a href="Inicio">Início</a></li>
+				<li><a href="Ver?categoria=Noticia"><b class="tituloNoticias">Notícias</b></a></li>
+				<li><a href="Ver?categoria=Esporte"><b class="tituloEsportes">Esportes</b></a></li>
+				<li><a href="Ver?categoria=Tecnologia"><b class="tituloTecnologia">Tecnologia</b></a></li>
+				<li><a href="Ver?categoria=Variedades"><b class="tituloVariedades">Variedades</b></a></li>
 				<li><a href="#">Voltar ao topo</a></li>
 			</ol>
 		</footer>

@@ -32,4 +32,14 @@
     <servlet-name>LerNoticia</servlet-name>
     <url-pattern>/LerNoticia</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ver</display-name>
+    <servlet-name>Ver</servlet-name>
+    <servlet-class>controller.Ver</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ver</servlet-name>
+    <url-pattern>/Ver</url-pattern>
+  </servlet-mapping>
 </web-app>
