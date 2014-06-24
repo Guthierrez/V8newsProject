@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'airlockregular';
+    src: url('../fonts/airlock-webfont.eot');
+    src: url('../fonts/airlock-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/airlock-webfont.woff') format('woff'),
+         url('../fonts/airlock-webfont.ttf') format('truetype'),
+         url('../fonts/airlock-webfont.svg#airlockregular') format('svg');
+}
+
+
+*{margin:0px; padding:0px;} 
+
+body{width:1100px; margin:auto; height: auto; position: relative;}
+
+section{height: auto; float: left; padding-bottom: 40px; margin-left: auto; margin-right: auto;}
+
+header{height: 120px; width: 1100px;}
+
+
+/*-----------------------------MENU-----------------------------*/
+
+nav{border-radius:5px; width: 1100px; height: 40px; margin-top: 30px; box-shadow: 2px 2px 2px 2px; margin-bottom: 15px;}
+
+nav{background: rgb(0,0,0); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(76,76,76,1) 42%, rgba(0,0,0,1) 75%, rgba(76,76,76,1) 94%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(42%,rgba(76,76,76,1)), color-stop(75%,rgba(0,0,0,1)), color-stop(94%,rgba(76,76,76,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(76,76,76,1) 42%,rgba(0,0,0,1) 75%,rgba(76,76,76,1) 94%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(76,76,76,1) 42%,rgba(0,0,0,1) 75%,rgba(76,76,76,1) 94%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(76,76,76,1) 42%,rgba(0,0,0,1) 75%,rgba(76,76,76,1) 94%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(76,76,76,1) 42%,rgba(0,0,0,1) 75%,rgba(76,76,76,1) 94%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#4c4c4c',GradientType=0 ); /* IE6-9 */}
+
+nav ul li{width: 220px; height: 32px; float: left; border-radius:5px; padding-top: 10px; list-style: none;}
+
+nav ul li a {text-decoration: none; height:20px; padding-left: 70px; margin-top: 25px; font-size: 19px;
+font-family:  arial;}
+
+.home{color:silver} .noticias{color:#FF001A} .esportes{color:#33E314} .tecnologia{color:#0000FF} .variedades{color:#FF4500}
+
+nav ul li b:hover{background-color: white; color:#000000; text-decoration: none; border-radius:4px;}
+nav ul li b:VISITED{background-color: white; color:#000000; text-decoration: none; border-radius:4px;}
+
+/*-----------------------------MENU-----------------------------*/
+
+.cadastrar{text-decoration: none; font-family: arial; color: black; font-weight: bold; font-size: 18px;}
+.listar{text-decoration: none; font-family: arial; color: black; font-weight: bold; font-size: 18px;}
+#menu{width: 500px; margin-bottom: 30px; margin-top: 20px}
+h1{font-family: arial; text-decoration: underline; margin-bottom: 30px; margin-top: 10px;}
+/*-----------------------------LISTAGEM----------------------------------------------- */
+
+table {border-collapse: collapse;
+border: 2px solid #000;
+font: normal 80%/140% arial, helvetica, sans-serif;
+color: #000; font-weight:bold; border-radius:5px;
+background: #fff;}
+
+td, th {border: 1px dotted #bbb;
+padding: .5em;}
+
+caption {padding: 0 0 .5em 0;
+text-align: left;
+font-size: 1.4em;
+font-weight: bold;
+text-transform: uppercase;
+color: #333;
+background: transparent;}
+
+table a {padding: 1px;
+text-decoration: none;
+font-weight: bold;
+background: transparent;
+font-size: 15px;}
+
+table a:link { text-decoration: underline; color: blue}
+
+table a:visited {text-decoration: none; color: blue}
+
+table a:hover {color: black;}
+
+th{vertical-align: top; font-size:16px; border-bottom: 3px solid black;
+text-align: left;}
+
+tbody th {white-space: nowrap;}
+
+.odd {background: #fcfcfc;}
+
+tbody tr:hover {background: #E5E1E6;}
+
+/*-----------------------------CADASTRO----------------------------------------------- */
+
+.categoria{width: 25px; color: yellow; height: 18px;}
+.enviar{width: 70px; border-radius:0px; margin-left: 0px;}
+
+label,  input {
+	display: block;
+	float: left;
+}
+
+input {margin-left: 10px; border-radius:0px; height: 25px; width:450px;}
+
+label {	
+	text-align: right;
+	width: 33px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	margin-right: 20px;
+	font-weight: 700;
+	font-family: arial;
+	font-size: 15px;
+}
+
+br {
+	clear: left;
+}
+
+/*------------------------footer-------------------------------*/
+
+footer{clear: both; padding-bottom: 30px;}
+footer .direitos{margin-top:30px; width: 1100px; height: 60px; background: rgb(224,224,224); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(224,224,224,1) 0%, rgba(255,255,255,1) 24%, rgba(224,224,224,1) 57%, rgba(255,255,255,1) 83%, rgba(224,224,224,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(224,224,224,1)), color-stop(24%,rgba(255,255,255,1)), color-stop(57%,rgba(224,224,224,1)), color-stop(83%,rgba(255,255,255,1)), color-stop(100%,rgba(224,224,224,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(255,255,255,1) 24%,rgba(224,224,224,1) 57%,rgba(255,255,255,1) 83%,rgba(224,224,224,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(255,255,255,1) 24%,rgba(224,224,224,1) 57%,rgba(255,255,255,1) 83%,rgba(224,224,224,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(255,255,255,1) 24%,rgba(224,224,224,1) 57%,rgba(255,255,255,1) 83%,rgba(224,224,224,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(224,224,224,1) 0%,rgba(255,255,255,1) 24%,rgba(224,224,224,1) 57%,rgba(255,255,255,1) 83%,rgba(224,224,224,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */ border-radius:5px;
+box-shadow: 2px 2px 2px 2px;}
+footer .direitos img{margin-left: 30px; margin-top: 5px; float: left;}
+footer .direitos .copy{font-family: arial; float: left; margin-left: 400px; margin-top: 20px; font-weight: bold}
+footer .direitos .sobre{font-family: arial; margin-left: 900px; float: left; margin-top: -20px; font-weight: bold}
+footer ol{margin-left: 150px; margin-top: 15px;}
+footer ol li{list-style: none; float: left; text-decoration: none; padding-right: 40px; margin-left: 20px; font-weight: bolder;}
+footer ol li a{text-decoration: none; color:black; font-family: arial; font-size: 18px;}

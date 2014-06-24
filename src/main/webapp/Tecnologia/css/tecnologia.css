@@ -56,7 +56,7 @@ margin: 15px 5px 0px 10px; float:left;}
 #fotos ul li p{margin: 0px; padding: 10 15px; line-height: 20px;
 font-family: Arial; font-size:15px; display: none;}
 
-#fotos ul li p b{font-weight: bold; font-size: 20px; color:#002DB2}
+#fotos ul li p b{font-weight: bold; font-size: 19px; color:#002DB2}
 
 #fotos ul li p a{text-decoration: none; color:white; font-weight: bold}
 
@@ -74,7 +74,7 @@ filter: alpha(opacity = 90); font-weight: bold; border-radius:3px; margin:0.3px;
 #fotos div.paginas a:hover, #fotos div.paginas a.activeSlide{
 background: #002DB2; font-weight: bold;}
 
-#fotos ul li div.barra_semi-transparente p {width: 590px; height:60px; position:absolute; bottom:-5;
+#fotos ul li div.barra_semi-transparente p {width: 590px; height:70px; position:absolute; bottom:-5;
 background: black;  opacity:0.90; filter:alpha(opacity = 90); display:none; border-radius:10px;}
 
 

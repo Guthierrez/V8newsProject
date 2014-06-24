@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.Noticia;
 import model.NoticiaService;
 
-@WebServlet("/ListarTodas")
+@WebServlet("/PainelAdmin")
 public class ListarTodas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -20,7 +20,7 @@ public class ListarTodas extends HttpServlet {
 		NoticiaService service = NoticiaService.getNoticiaService();
 		List<Noticia> noticias = service.obterTodasNoticias();
 		request.setAttribute("noticias", noticias);
-		request.getRequestDispatcher("listagem.jsp").forward(request, response);
+		request.getRequestDispatcher("menuAdmin.jsp").forward(request, response);
 	}
 
 }

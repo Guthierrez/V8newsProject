@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/adminStyle.css">
 		<script type="text/javascript" src="js/tinymce/js/tinymce/tinymce.min.js"></script>
 		<script>
 			tinymce.init({
@@ -29,16 +30,50 @@
 		</script>
 	</head>
 	<body>
+		<header>
+			<img alt="logo" class="logo" src="img/logos/logoPreto.png">
+		</header>
+		
+		
+		<nav>
+			<ul id="menuTopo">
+				<li><a href="Inicio"><b class="home">Início</b></a></li>
+				<li><a href="Ver?categoria=Noticia"><b class="noticias">Notícias</b></a></li>
+				<li><a href="Ver?categoria=Esporte"><b class="esportes">Esportes</b></a></li>
+				<li><a href="Ver?categoria=Tecnologia"><b class="tecnologia">Tecnologia</b></a></li>
+				<li><a href="Ver?categoria=Variedades"><b class="variedades">Variedades</b></a></li>
+			</ul>
+		</nav>
+		
+		<section>
+		
+		<h1>Editar Notícia</h1>
+		
 		<form action="EditarNoticia" method="post">
-		<input type="text" name="IDD" value="${noticia.id}"><br />
-		Nome: <input type="text" name="nomee" required="required" value="${noticia.nome}"><br />
-		Resumo: <input type="text" name="resumoo" required="required" value="${noticia.resumo}"><br />
-		Assunto: <input type="text" name="assunto" value="${noticia.assunto}"><br />
-		<br>      	   
-		Fonte: <input type="text" name="fonte" value="${noticia.fonte}"><br />
-		Data: <input type="date" name="data" value="${noticia.data}"><br />
-		<textarea id="elm1" name="conteudo" style="width:100px;">${noticia.conteudo}</textarea>
-		<input type="submit" value="Salvar">
+			<label for="IDD">Noticia:</label>
+				<input type="text" value="${noticia.id}" name="IDD"><br />
+			<label for="nome">Nome:</label>
+				<input type="text" name="nome" required="required" value="${noticia.nome}"><br />
+			<label for="resumo">Resumo:</label>
+				<input type="text" name="resumo" required="required" value="${noticia.resumo}"><br />
+			<label for="assunto">Assunto:</label>
+				<input type="text" name="assunto" required="required" value="${noticia.assunto}"><br /> 	   
+			<label for="fonte">Fonte:</label>
+				<input type="text" name="fonte" required="required" value="${noticia.fonte}"><br />
+			<label for="data">Data:</label>
+				<input type="date" name="data" required="required" value="${noticia.data }"><br /><br>
+			<textarea id="elm1" name="conteudo" style="width:100px;">${noticia.conteudo}</textarea><br />
+			<input type="submit" class="enviar" value="Salvar">
 		</form>
+		
+		</section>
+		
+		<footer>
+			<div class="direitos">
+				<img alt="" src="img/logos/rodapePreto.png">
+				<div class="copy">© Copyright 2014</div>
+				<div class="sobre">Sobre</div>
+			</div>
+		</footer>
 	</body>
 </html>

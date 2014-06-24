@@ -31,6 +31,6 @@ public class CriaNoticia extends HttpServlet {
 		
 		Noticia noticia = new Noticia(nome,resumo,assunto,categoria,fonte,data,imagem,conteudo);
 		noticiaService.salvaNoticia(noticia);
-		response.sendRedirect("ListarTodas");
+		response.sendRedirect("PainelAdmin");
 	}
 }

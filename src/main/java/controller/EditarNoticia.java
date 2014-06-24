@@ -26,10 +26,9 @@ public class EditarNoticia extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Integer id = Integer.parseInt(request.getParameter("IDD"));
-		String nome = (String) request.getParameter("nomee");
-		String resumo = (String) request.getParameter("resumoo");
+		String nome = (String) request.getParameter("nome");
+		String resumo = (String) request.getParameter("resumo");
 		String assunto = (String) request.getParameter("assunto");
-		System.out.println(assunto);
 		String fonte = (String) request.getParameter("fonte");
 		String data = (String) request.getParameter("data");
 		String conteudo = (String) request.getParameter("conteudo");
@@ -42,6 +41,6 @@ public class EditarNoticia extends HttpServlet {
 		noticia.setData(data);
 		noticia.setConteudo(conteudo);
 		noticiaService.updateNoticia(noticia);
-		response.sendRedirect("ListarTodas");
+		response.sendRedirect("PainelAdmin");
 	}
 }

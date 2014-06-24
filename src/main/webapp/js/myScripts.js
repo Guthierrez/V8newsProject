@@ -31,3 +31,15 @@ $(document).ready(function(){
        return false;
     });
 });
+
+$(document).ready(function(){
+    $("#cadastro").hide();
+    $("#cadastrar").click(function(){
+    	$("#listagem").slideUp("slow");
+    	$("#cadastro").slideDown("slow");
+    });
+    $("#listar").click(function(){
+    	$("#cadastro").slideUp("slow");
+    	$("#listagem").slideDown("slow");
+    });
+});

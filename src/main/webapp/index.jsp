@@ -90,9 +90,6 @@
 					<c:forEach items="${noticias}" var="noticia">	
 						<li><img alt="" src="img/logos/seta.png"><a href="LerNoticia?ID=${noticia.id}">${noticia.nome }</a></li>
 					</c:forEach>
-					<c:forEach items="${noticias}" var="noticia">	
-						<li><img alt="" src="img/logos/seta.png"><a href="LerNoticia?ID=${noticia.id}">${noticia.nome }</a></li>
-					</c:forEach>
 				</ol>
 			</div>
 			

@@ -19,7 +19,7 @@ public class ExcluirNoticia extends HttpServlet {
 		NoticiaService service = NoticiaService.getNoticiaService();
 		Integer id = Integer.parseInt(request.getParameter("ID"));
 		service.excluirNoticia(id);
-		response.sendRedirect("ListarTodas");
+		response.sendRedirect("PainelAdmin");
 	}
 
 }
