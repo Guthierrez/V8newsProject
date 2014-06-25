@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -27,8 +28,9 @@ public class NoticiaDao {
 		try{
 			Noticia noticia = new Noticia();
 			Connection con = ConexaoDao.getInstancia().getConexao();
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery("select * from noticias where id="+id+"");
+			PreparedStatement st = con.prepareStatement("select * from noticias where id=?");
+			st.setInt(1, id);
+			ResultSet rs = st.executeQuery();
 			while(rs.next()){
 			noticia.setId(rs.getInt("id"));
 			noticia.setNome(rs.getString("nome"));
@@ -50,11 +52,17 @@ public class NoticiaDao {
 	public void salvarNoticia(Noticia noticia){
 		try{
 			Connection con = ConexaoDao.getInstancia().getConexao();
-			Statement st = con.createStatement();
-			st.execute("INSERT INTO NOTICIAS(nome, resumo, assunto, categoria, fonte, data, imagem, conteudo)"
-			   + "VALUES ('"+noticia.getNome()+"', '"+noticia.getResumo()+"', '"+noticia.getAssunto()+"',"
-							+ "'"+noticia.getCategoria()+"', '"+noticia.getFonte()+"', '"+noticia.getData()+"', '"+noticia.getImagem()+"',"
-							+ "'"+noticia.getConteudo()+"')");
+			PreparedStatement st = con.prepareStatement("INSERT INTO NOTICIAS(nome, resumo, assunto, categoria, fonte, data, imagem, conteudo) "
+					+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+			st.setString(1, noticia.getNome());
+			st.setString(2, noticia.getResumo());
+			st.setString(3, noticia.getAssunto());
+			st.setString(4, noticia.getCategoria());
+			st.setString(5, noticia.getFonte());
+			st.setString(6, noticia.getData());
+			st.setString(7, noticia.getImagem());
+			st.setString(8, noticia.getConteudo());
+			st.executeUpdate();
 		}catch(SQLException e){
 			System.err.println(e.getMessage());
 		}
@@ -63,12 +71,16 @@ public class NoticiaDao {
 	public void updateNoticia(Noticia noticia){
 		try{
 			Connection con = ConexaoDao.getInstancia().getConexao();
-			Statement st = con.createStatement();
-			st.executeUpdate("UPDATE noticias "
-					+  "SET nome='"+noticia.getNome()+"', resumo='"+noticia.getResumo()+"',"
-					+  "assunto='"+noticia.getAssunto()+"', fonte='"+noticia.getFonte()+"',"
-					+  "data='"+noticia.getData()+"', conteudo='"+noticia.getConteudo()+"'"
-					+  " WHERE id="+noticia.getId()+"");
+			PreparedStatement st = con.prepareStatement("UPDATE noticias set nome=?, resumo=?, assunto=?, fonte=?,"
+					+ " data=?, conteudo=? where id=?");
+			st.setString(1, noticia.getNome());
+			st.setString(2, noticia.getResumo());
+			st.setString(3, noticia.getAssunto());
+			st.setString(4, noticia.getFonte());
+			st.setString(5, noticia.getData());
+			st.setString(6, noticia.getConteudo());
+			st.setInt(7, noticia.getId());
+			st.executeUpdate();
 		}catch(SQLException e){
 			System.out.println(e.getMessage());
 		}
@@ -77,8 +89,9 @@ public class NoticiaDao {
 	public void excluirNoticia(Integer id){
 		try{
 			Connection con = ConexaoDao.getInstancia().getConexao();
-			Statement st = con.createStatement();
-			st.execute("delete from noticias where id="+id+"");
+			PreparedStatement st = con.prepareStatement("delete from noticias where id=?");
+			st.setInt(1, id);
+			st.executeUpdate();
 		}catch(SQLException e){
 			System.err.println(e.getMessage());
 		}
@@ -89,7 +102,7 @@ public class NoticiaDao {
 		try{
 			Connection con = ConexaoDao.getInstancia().getConexao();
 			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery("select * from noticias");
+			ResultSet rs = st.executeQuery("select * from noticias order by ID DESC");
 		while (rs.next()){
 			Noticia noticia = new Noticia();
 			noticia.setId(rs.getInt("id"));
@@ -113,8 +126,9 @@ public class NoticiaDao {
 		List<Noticia> noticias = new ArrayList<Noticia>();
 		try{
 			Connection con = ConexaoDao.getInstancia().getConexao();
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery("select * from noticias where categoria='"+categoria+"'");
+			PreparedStatement stm = con.prepareStatement("select * from noticias where categoria=? order by ID DESC");
+			stm.setString(1, categoria);
+			ResultSet rs = stm.executeQuery();
 		while (rs.next()){
 			Noticia noticia = new Noticia();
 			noticia.setId(rs.getInt("id"));

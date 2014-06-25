@@ -21,7 +21,7 @@ input{border-radius:5px; height: 30px; width:200px;}
 
 /*-----------------------------MENU---------0-42-73-94--------------------*/
 
-nav{border-radius:5px; width: 1100px; height: 40px; margin-top: 30px; box-shadow: 2px 2px 2px 2px; margin-bottom: 15px;}
+nav{border-radius:5px; width: 1100px; height: 40px; margin-top: 30px; box-shadow: 2px 2px 2px 2px; margin-bottom: 5px;}
 
 nav{background: rgb(0,45,178); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(0,45,178,1) 0%, rgba(0,104,173,1) 42%, rgba(0,45,178,1) 73%, rgba(0,104,173,1) 94%); /* FF3.6+ */
@@ -47,7 +47,7 @@ nav ul li b:hover{background-color: white; color:#002DB2; text-decoration: none;
 /*---------------------------AREA DE DESTAQUES------------------*/
 
 #fotos{position: relative; width: 620px; height: 465px; padding: 0;
-margin: 15px 5px 0px 10px; float:left;}
+margin: 15px 5px 30px 10px; float:left;}
 
 #fotos ul li{list-style: none;}
 
@@ -82,9 +82,9 @@ background: black;  opacity:0.90; filter:alpha(opacity = 90); display:none; bord
 
 /*---------------------------MAIS NOTICIAS------------------*/
 
-.maisNoticias{padding-top: 10px; margin-left: 18px; clear: both; margin-top: 30px;}
+.maisNoticias{padding-top: 10px; margin-left: 18px; clear: both; margin-top: 80px;}
 
-.maisNoticias  ul  li{list-style: none; width:590px; clear: both; padding-top: 20px;}
+.maisNoticias  ul  li{list-style: none; width:590px; clear: both; padding-top: 10px; }
 
 .maisNoticias  ul  li a{text-decoration: none;}
 
@@ -97,7 +97,7 @@ background: black;  opacity:0.90; filter:alpha(opacity = 90); display:none; bord
 
 .tituloEsportes{font-family: Arial; font-size: 19px; color:#399B00; font-weight: bolder; margin-top: 15px;}
 .tituloNoticias{font-family: Arial; font-size: 19px; color:#A50006; font-weight: bolder; margin-top: 15px;}
-.tituloTecnologia{font-family: Arial; font-size: 19px; color:#002DB2; font-weight: bolder; margin-top: 15px;}
+.tituloTecnologia{font-family: Arial; font-size: 19px; color:#002DB2; font-weight: bolder; margin-top: 35px;}
 .tituloVariedades{font-family: Arial; font-size: 19px; color:#FF4500; font-weight: bolder; margin-top: 15px;}
 
 .demaisNoticias{clear:both; padding-top: 20px; margin-left: 10px;}

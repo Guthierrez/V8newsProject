@@ -34,7 +34,7 @@
 				<div class="paginas">
 				</div>
 				<ul>
-					<c:forEach items="${noticias}" var="noticia">
+					<c:forEach items="${noticias}" var="noticia" begin="0" end="3">
 						<li>
 						<img alt="img" src="${noticia.imagem}">
 						<div class="barra_semi-transparente">
@@ -46,7 +46,7 @@
 				</ul>
 		    </div>
 			
-			<c:forEach items="${noticias}" var="noticia">
+			<c:forEach items="${noticias}" var="noticia" begin="4" end="7">
 				<div class="maisNoticias">
 					<h1 class="titleMaisNoticias"><b class="${noticia.categoria}">${noticia.categoria}</b></h1>
 					<div class="rodapeDestaques"></div>
@@ -131,7 +131,6 @@
 			<div class="direitos">
 				<img alt="" src="img/logos/rodapePreto.png">
 				<div class="copy">© Copyright 2014</div>
-				<div class="sobre">Sobre</div>
 			</div>
 			<ol class="menuRodape">
 				<li><a href="Inicio">Início</a></li>
@@ -139,7 +138,7 @@
 				<li><a href="Ver?categoria=Esporte"><b class="tituloEsportes">Esportes</b></a></li>
 				<li><a href="Ver?categoria=Tecnologia"><b class="tituloTecnologia">Tecnologia</b></a></li>
 				<li><a href="Ver?categoria=Variedades"><b class="tituloVariedades">Variedades</b></a></li>
-				<li><a href="#">Voltar ao topo</a></li>
+				<li><a href="PainelAdmin"><img src="img/logos/admin.png" class="admin"></a></li>
 			</ol>
 		</footer>
 </html>

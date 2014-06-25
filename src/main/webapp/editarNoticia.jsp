@@ -50,8 +50,8 @@
 		<h1>Editar Notícia</h1>
 		
 		<form action="EditarNoticia" method="post">
-			<label for="IDD">Noticia:</label>
-				<input type="text" value="${noticia.id}" name="IDD"><br />
+			<div hidden><label for="IDD">Noticia</label>
+				<input type="text" value="${noticia.id}" name="IDD" readonly="readonly"></div><br />
 			<label for="nome">Nome:</label>
 				<input type="text" name="nome" required="required" value="${noticia.nome}"><br />
 			<label for="resumo">Resumo:</label>

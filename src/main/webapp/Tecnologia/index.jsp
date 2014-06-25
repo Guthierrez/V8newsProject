@@ -25,7 +25,7 @@
 		</nav>
 		
 		<!--  SLIDE DE DESTAQUES -->
-		
+		<br><br>
 		<section>
 			<div class="titleDestaques">
 			<h2>Últimos destaques</h2>

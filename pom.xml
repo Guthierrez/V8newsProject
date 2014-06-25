@@ -22,7 +22,7 @@
 				<systemProperties>
 					<systemProperty>
 						<name>jetty.port</name>
-						<value>1104</value>
+						<value>9090</value>
 					</systemProperty>
 				</systemProperties>
 				<scanIntervalSeconds>1</scanIntervalSeconds>
