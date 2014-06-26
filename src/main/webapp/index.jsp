@@ -138,7 +138,6 @@
 				<li><a href="Ver?categoria=Esporte"><b class="tituloEsportes">Esportes</b></a></li>
 				<li><a href="Ver?categoria=Tecnologia"><b class="tituloTecnologia">Tecnologia</b></a></li>
 				<li><a href="Ver?categoria=Variedades"><b class="tituloVariedades">Variedades</b></a></li>
-				<li><a href="PainelAdmin"><img src="img/logos/admin.png" class="admin"></a></li>
 			</ol>
 		</footer>
 </html>

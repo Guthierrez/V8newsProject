@@ -36,7 +36,7 @@ public class ImageUploader extends HttpServlet {
                     }
                     if(!item.isFormField()){
                         String name = new File(item.getName()).getName();
-                        String caminhoImg = "img\\" + name;
+                        String caminhoImg = "img/" + name;
                         request.setAttribute("caminhoImg", caminhoImg);
                         item.write( new File(UPLOAD_DIRECTORY +  name));
                     }

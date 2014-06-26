@@ -1,8 +1,8 @@
-Wed Jun 25 09:27:43 BRT 2014 : Apache Derby Servidor de Rede - 10.10.1.1 - (1458268) iniciado e pronto para aceitar conexões na porta 1527 em {3}
+Thu Jun 26 09:20:04 BRT 2014 : Apache Derby Servidor de Rede - 10.10.1.1 - (1458268) iniciado e pronto para aceitar conexões na porta 1527 em {3}
 ----------------------------------------------------------------
-Wed Jun 25 09:28:16 BRT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0146-d2fe-f7ad-000004d97250 
-on database directory C:\Users\Guthierrez\workspace\V8newsProject\V8news with class loader WebAppClassLoader=1551152900@5c74b704 
+Thu Jun 26 09:21:20 BRT 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0146-d81e-53d2-000002d24428 
+on database directory C:\Users\Guthierrez\workspace\V8newsProject\V8news with class loader WebAppClassLoader=309957702@12799446 
 Loaded from file:/C:/Users/Guthierrez/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.7.0_45-b18
