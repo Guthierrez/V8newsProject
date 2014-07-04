@@ -1,6 +1,5 @@
 package controller;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -19,32 +18,33 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 public class ImageUploader extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final String UPLOAD_DIRECTORY = "src\\main\\webapp\\img\\";
-       
-    
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(ServletFileUpload.isMultipartContent(request)){
+
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		if (ServletFileUpload.isMultipartContent(request)) {
 			try {
-                @SuppressWarnings("unchecked")
+				@SuppressWarnings("unchecked")
 				List<FileItem> multiparts = new ServletFileUpload(
-                                         new DiskFileItemFactory()).parseRequest(request);
-              
-                for(FileItem item : multiparts){
-                	 if (item.isFormField()) {  
-                         String name = item.getFieldName();  
-                         String value = item.getString();
-                         request.setAttribute(name, value);
-                    }
-                    if(!item.isFormField()){
-                        String name = new File(item.getName()).getName();
-                        String caminhoImg = "img/" + name;
-                        request.setAttribute("caminhoImg", caminhoImg);
-                        item.write( new File(UPLOAD_DIRECTORY +  name));
-                    }
-                }           
-             request.getRequestDispatcher("CriaNoticias").forward(request, response);
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
+						new DiskFileItemFactory()).parseRequest(request);
+
+				for (FileItem item : multiparts) {
+					if (item.isFormField()) {
+						String name = item.getFieldName();
+						String value = item.getString();
+						request.setAttribute(name, value);
+					}
+					if (!item.isFormField()) {
+						String name = new File(item.getName()).getName();
+						String caminhoImg = "img/" + name;
+						request.setAttribute("caminhoImg", caminhoImg);
+						item.write(new File(UPLOAD_DIRECTORY + name));
+					}
+				}
+				request.getRequestDispatcher("CriaNoticias").forward(request,
+						response);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
 		}
 
 	}

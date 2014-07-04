@@ -2,44 +2,45 @@ package model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class ConexaoDao {
-		private Connection conexao;
-		private String url = "jdbc:derby://localhost/V8news;create=true";
-		private String user = "news";
-		private String password = "123";
-		private static ConexaoDao instancia;
-		
-		public ConexaoDao(){
-			 try {  
-		            Class.forName("org.apache.derby.jdbc.ClientDriver");  
-		  
-		        } catch (ClassNotFoundException e) {  
-		            System.out.println("Driver nao encontrdao!");  
-		        }  
-		  
-		        try {  
-		            this.conexao = DriverManager.getConnection(this.url, this.user,  
-		                    this.password);  
-		            System.out.println("Conexão realizada com sucesso!");  
-		  
-		        } catch (SQLException e) {  
-		            System.err.println(e.getMessage());  
-		        }  
-		}  
-		
-		 
-	    public synchronized static ConexaoDao getInstancia() {  
-	        if (instancia == null) {  
-	            instancia = new ConexaoDao();  
-	        }  
-	        return instancia;  
-	    }
-	    
-	    public Connection getConexao() {  
-	        return conexao;  
-	    } 
-	  
-}
+	public static Connection createConnection() {
+		Connection conn;
+		try{  
+			Class.forName("org.apache.derby.jdbc.ClientDriver");  
+	    }catch (ClassNotFoundException e) {  
+	    	System.out.println("Driver nao encontrdao!");  
+	    }  
 
+		try {
+			String url = "jdbc:derby://localhost/V8news;create=true";
+			conn = DriverManager.getConnection(url, "news", "123");
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		return conn;
+	}
+
+	public static void close(Connection conn, Statement stmt, ResultSet rs) {
+		try {
+			if (rs != null) {
+				rs.close();
+			}
+			if (stmt != null) {
+				stmt.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
+		} catch (Exception e) {
+			
+		}
+	}
+
+	public static  void close(Connection conn, Statement stmt) {
+		close(conn, stmt, null);
+	}
+
+}

@@ -1,5 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ pageEncoding="ISO-8859-1"%>
+ <html>
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="css/adminStyle.css">
@@ -37,8 +38,8 @@
 		
 		<nav>
 			<ul id="menuTopo">
-				<li><a href="Inicio"><b class="home">InÃ­cio</b></a></li>
-				<li><a href="Ver?categoria=Noticia"><b class="noticias">NotÃ­cias</b></a></li>
+				<li><a href="Inicio"><b class="home">Início</b></a></li>
+				<li><a href="Ver?categoria=Noticia"><b class="noticias">Notícias</b></a></li>
 				<li><a href="Ver?categoria=Esporte"><b class="esportes">Esportes</b></a></li>
 				<li><a href="Ver?categoria=Tecnologia"><b class="tecnologia">Tecnologia</b></a></li>
 				<li><a href="Ver?categoria=Variedades"><b class="variedades">Variedades</b></a></li>
@@ -47,7 +48,7 @@
 		
 		<section>
 		
-		<h1>Editar NotÃ­cia</h1>
+		<h1>Editar Notícia</h1>
 		
 		<form action="EditarNoticia" method="post">
 			<div hidden><label for="IDD">Noticia</label>
@@ -71,7 +72,7 @@
 		<footer>
 			<div class="direitos">
 				<img alt="" src="img/logos/rodapePreto.png">
-				<div class="copy">Â© Copyright 2014</div>
+				<div class="copy">© Copyright 2014</div>
 				<div class="sobre">Sobre</div>
 			</div>
 		</footer>

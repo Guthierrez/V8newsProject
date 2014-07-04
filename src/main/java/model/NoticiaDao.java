@@ -25,12 +25,15 @@ public class NoticiaDao {
 	}
 	
 	public Noticia getNoticia(Integer id){
+		Connection con = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		Noticia noticia = new Noticia();
 		try{
-			Noticia noticia = new Noticia();
-			Connection con = ConexaoDao.getInstancia().getConexao();
-			PreparedStatement st = con.prepareStatement("select * from noticias where id=?");
+			con = ConexaoDao.createConnection();
+			st = con.prepareStatement("select * from noticias where id=?");
 			st.setInt(1, id);
-			ResultSet rs = st.executeQuery();
+			rs = st.executeQuery();
 			while(rs.next()){
 			noticia.setId(rs.getInt("id"));
 			noticia.setNome(rs.getString("nome"));
@@ -47,12 +50,17 @@ public class NoticiaDao {
 			System.err.println(e.getMessage());
 			return null;
 		}
+		finally{
+			ConexaoDao.close(con, st, rs);
+		}
 	}
 	
 	public void salvarNoticia(Noticia noticia){
+		Connection con = null;
+		PreparedStatement st = null;
 		try{
-			Connection con = ConexaoDao.getInstancia().getConexao();
-			PreparedStatement st = con.prepareStatement("INSERT INTO NOTICIAS(nome, resumo, assunto, categoria, fonte, data, imagem, conteudo) "
+			con = ConexaoDao.createConnection();
+			st = con.prepareStatement("INSERT INTO NOTICIAS(nome, resumo, assunto, categoria, fonte, data, imagem, conteudo) "
 					+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 			st.setString(1, noticia.getNome());
 			st.setString(2, noticia.getResumo());
@@ -63,14 +71,18 @@ public class NoticiaDao {
 			st.setString(7, noticia.getImagem());
 			st.setString(8, noticia.getConteudo());
 			st.executeUpdate();
+			ConexaoDao.close(con, st, null);
 		}catch(SQLException e){
 			System.err.println(e.getMessage());
+		}
+		finally{
+			ConexaoDao.close(con, st, null);
 		}
 	}
 	
 	public void updateNoticia(Noticia noticia){
 		try{
-			Connection con = ConexaoDao.getInstancia().getConexao();
+			Connection con = ConexaoDao.createConnection();
 			PreparedStatement st = con.prepareStatement("UPDATE noticias set nome=?, resumo=?, assunto=?, fonte=?,"
 					+ " data=?, conteudo=? where id=?");
 			st.setString(1, noticia.getNome());
@@ -81,6 +93,7 @@ public class NoticiaDao {
 			st.setString(6, noticia.getConteudo());
 			st.setInt(7, noticia.getId());
 			st.executeUpdate();
+			ConexaoDao.close(con, st, null);
 		}catch(SQLException e){
 			System.out.println(e.getMessage());
 		}
@@ -88,10 +101,11 @@ public class NoticiaDao {
 	
 	public void excluirNoticia(Integer id){
 		try{
-			Connection con = ConexaoDao.getInstancia().getConexao();
+			Connection con = ConexaoDao.createConnection();
 			PreparedStatement st = con.prepareStatement("delete from noticias where id=?");
 			st.setInt(1, id);
 			st.executeUpdate();
+			ConexaoDao.close(con, st, null);
 		}catch(SQLException e){
 			System.err.println(e.getMessage());
 		}
@@ -99,10 +113,13 @@ public class NoticiaDao {
 	
 	public List<Noticia> obterTodasNoticas(){
 		List<Noticia> noticias = new ArrayList<Noticia>();
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
 		try{
-			Connection con = ConexaoDao.getInstancia().getConexao();
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery("select * from noticias order by ID DESC");
+			con = ConexaoDao.createConnection();
+			st = con.createStatement();
+			rs = st.executeQuery("select * from noticias order by ID DESC");
 		while (rs.next()){
 			Noticia noticia = new Noticia();
 			noticia.setId(rs.getInt("id"));
@@ -116,19 +133,26 @@ public class NoticiaDao {
 			noticia.setConteudo(rs.getString("conteudo"));
 			noticias.add(noticia);
 		}
+		ConexaoDao.close(con, st, null);
 		}catch(SQLException e){
 			System.err.println(e.getMessage());
+		}
+		finally{
+			ConexaoDao.close(con, st, rs);
 		}
 		return noticias;
 	}
 	
 	public List<Noticia> obterCategoriaNoticias(String categoria){
 		List<Noticia> noticias = new ArrayList<Noticia>();
+		Connection con = null;
+		PreparedStatement stm = null;
+		ResultSet rs = null;
 		try{
-			Connection con = ConexaoDao.getInstancia().getConexao();
-			PreparedStatement stm = con.prepareStatement("select * from noticias where categoria=? order by ID DESC");
+			con = ConexaoDao.createConnection();
+			stm = con.prepareStatement("select * from noticias where categoria=? order by ID DESC");
 			stm.setString(1, categoria);
-			ResultSet rs = stm.executeQuery();
+			rs = stm.executeQuery();
 		while (rs.next()){
 			Noticia noticia = new Noticia();
 			noticia.setId(rs.getInt("id"));
@@ -142,8 +166,12 @@ public class NoticiaDao {
 			noticia.setConteudo(rs.getString("conteudo"));
 			noticias.add(noticia);
 		}
+		
 		}catch(SQLException e){
 			System.err.println(e.getMessage());
+		}
+		finally{
+			ConexaoDao.close(con, stm, rs);
 		}
 		return noticias;
 	}

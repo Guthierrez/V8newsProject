@@ -123,7 +123,7 @@
 					<li>
 						<h3><a class="mostraVideo" href="#">Título do Video</a></h3>
 						<div class="video">
-							AQUI VAI O VIDEEEOOOOO
+							
 						</div>
 					</li>
 				</ul>
