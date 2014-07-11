@@ -13,16 +13,7 @@
 			<div class="barraBuscar">Buscar: <input type="text"></div>
 		</header>
 		
-		
-		<nav>
-			<ul id="menuTopo">
-				<li><a href="Inicio"><b class="home">Início</b></a></li>
-				<li><a href="Ver?categoria=Noticia"><b class="noticias">Notícias</b></a></li>
-				<li><a href="Ver?categoria=Esporte"><b class="esportes">Esportes</b></a></li>
-				<li><a href="Ver?categoria=Tecnologia"><b class="tecnologia">Tecnologia</b></a></li>
-				<li><a href="Ver?categoria=Variedades"><b class="variedades">Variedades</b></a></li>
-			</ul>
-		</nav>
+		<%@ include file="../menu.jsp" %>
 		
 		<!--  SLIDE DE DESTAQUES -->
 		
@@ -93,15 +84,7 @@
 				</ol>
 			</div>
 			
-			<div class="redessociais">
-				<h3>Visite-nos nas redes sociais</h3>
-				<ul>
-				<li><img src="img/logos/facebookicon.png"></li>
-				<li><img src="img/logos/googleplusicon.png"></li>
-				<li><img src="img/logos/twittericon.png"></li>
-				<li><img src="img/logos/youtubeicon.png"></li>
-				</ul>
-			</div>
+			<%@ include file="../redessociais.jsp" %>
 			
 			<div class="videos">
 				<b class="titleVideos">Entretenimento</b>
@@ -127,19 +110,6 @@
 			</div>
 		</aside>
 		
-		<footer>
-			<div class="direitos">
-				<img alt="" src="img/logos/rodapePreto.png">
-				<div class="copy">© Copyright 2014</div>
-				<div class="sobre">Sobre</div>
-			</div>
-			<ol class="menuRodape">
-				<li><a href="Inicio">Início</a></li>
-				<li><a href="Ver?categoria=Noticia"><b class="tituloNoticias">Notícias</b></a></li>
-				<li><a href="Ver?categoria=Esporte"><b class="tituloEsportes">Esportes</b></a></li>
-				<li><a href="Ver?categoria=Tecnologia"><b class="tituloTecnologia">Tecnologia</b></a></li>
-				<li><a href="Ver?categoria=Variedades"><b class="tituloVariedades">Variedades</b></a></li>
-				<li><a href="#">Voltar ao topo</a></li>
-			</ol>
-		</footer>
+		<%@ include file="../rodape.jsp" %>
+		
 </html>
