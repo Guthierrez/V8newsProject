@@ -55,6 +55,26 @@ public class NoticiaDao {
 		}
 	}
 	
+	public Noticia lerNoticia(Integer id){
+		Connection con = null;
+		PreparedStatement st = null;
+		Noticia noticia = this.getNoticia(id);
+		try{
+			con = ConexaoDao.createConnection();
+			st = con.prepareStatement("UPDATE noticias SET qtdViews=qtdViews+? where id=?");
+			st.setInt(1, 1);
+			st.setInt(2, noticia.getId());
+			st.executeUpdate();
+			return noticia;
+		}catch(SQLException e){
+			System.err.println(e.getMessage());
+			return null;
+		}
+		finally{
+			ConexaoDao.close(con, st, null);
+		}
+	}
+	
 	public void salvarNoticia(Noticia noticia){
 		Connection con = null;
 		PreparedStatement st = null;
@@ -111,7 +131,7 @@ public class NoticiaDao {
 		}
 	}
 	
-	public List<Noticia> obterTodasNoticas(){
+	public List<Noticia> obterNoticias(){
 		List<Noticia> noticias = new ArrayList<Noticia>();
 		Connection con = null;
 		Statement st = null;
@@ -143,7 +163,7 @@ public class NoticiaDao {
 		return noticias;
 	}
 	
-	public List<Noticia> obterCategoriaNoticias(String categoria){
+	public List<Noticia> obterNoticias(String categoria){
 		List<Noticia> noticias = new ArrayList<Noticia>();
 		Connection con = null;
 		PreparedStatement stm = null;
@@ -152,6 +172,71 @@ public class NoticiaDao {
 			con = ConexaoDao.createConnection();
 			stm = con.prepareStatement("select * from noticias where categoria=? order by ID DESC");
 			stm.setString(1, categoria);
+			rs = stm.executeQuery();
+		while (rs.next()){
+			Noticia noticia = new Noticia();
+			noticia.setId(rs.getInt("id"));
+			noticia.setNome(rs.getString("nome"));
+			noticia.setResumo(rs.getString("resumo"));
+			noticia.setAssunto(rs.getString("assunto"));
+			noticia.setCategoria(rs.getString("categoria"));
+			noticia.setFonte(rs.getString("fonte"));
+			noticia.setData(rs.getString("data"));
+			noticia.setImagem(rs.getString("imagem"));
+			noticia.setConteudo(rs.getString("conteudo"));
+			noticias.add(noticia);
+		}
+		
+		}catch(SQLException e){
+			System.err.println(e.getMessage());
+		}
+		finally{
+			ConexaoDao.close(con, stm, rs);
+		}
+		return noticias;
+	}
+	
+	public List<Noticia> obterMaisLidas(String categoria){
+		List<Noticia> noticias = new ArrayList<Noticia>();
+		Connection con = null;
+		PreparedStatement stm = null;
+		ResultSet rs = null;
+		try{
+			con = ConexaoDao.createConnection();
+			stm = con.prepareStatement("select * from noticias where categoria=? order by qtdViews DESC");
+			stm.setString(1, categoria);
+			rs = stm.executeQuery();
+		while (rs.next()){
+			Noticia noticia = new Noticia();
+			noticia.setId(rs.getInt("id"));
+			noticia.setNome(rs.getString("nome"));
+			noticia.setResumo(rs.getString("resumo"));
+			noticia.setAssunto(rs.getString("assunto"));
+			noticia.setCategoria(rs.getString("categoria"));
+			noticia.setFonte(rs.getString("fonte"));
+			noticia.setData(rs.getString("data"));
+			noticia.setImagem(rs.getString("imagem"));
+			noticia.setConteudo(rs.getString("conteudo"));
+			noticias.add(noticia);
+		}
+		
+		}catch(SQLException e){
+			System.err.println(e.getMessage());
+		}
+		finally{
+			ConexaoDao.close(con, stm, rs);
+		}
+		return noticias;
+	}
+	
+	public List<Noticia> obterMaisLidas(){
+		List<Noticia> noticias = new ArrayList<Noticia>();
+		Connection con = null;
+		PreparedStatement stm = null;
+		ResultSet rs = null;
+		try{
+			con = ConexaoDao.createConnection();
+			stm = con.prepareStatement("select * from noticias order by qtdViews DESC");
 			rs = stm.executeQuery();
 		while (rs.next()){
 			Noticia noticia = new Noticia();

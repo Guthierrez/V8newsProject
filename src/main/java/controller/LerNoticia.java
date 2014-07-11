@@ -17,10 +17,12 @@ public class LerNoticia extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		NoticiaService noticiaService = NoticiaService.getNoticiaService();
 		Integer ID = Integer.parseInt(request.getParameter("ID"));
-		Noticia noticia = noticiaService.getNoticia(ID);
-		List<Noticia> noticias = noticiaService.obterCategoriaNoticias(noticia.getCategoria());
+		Noticia noticia = noticiaService.lerNoticia(ID);
+		List<Noticia> noticias = noticiaService.obterNoticias(noticia.getCategoria());
+		List<Noticia> maisLidas = noticiaService.obterMaisLidas(noticia.getCategoria());
 		request.setAttribute("noticia", noticia);
 		request.setAttribute("noticias", noticias);
+		request.setAttribute("maisLidas", maisLidas);
 		request.getRequestDispatcher(noticia.getCategoria()+"/ler"+noticia.getCategoria()+".jsp").forward(request, response);
 	}
 

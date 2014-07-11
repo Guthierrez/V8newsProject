@@ -18,8 +18,10 @@ public class Inicio extends HttpServlet {
    
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		NoticiaService noticiaService = NoticiaService.getNoticiaService();
-		List<Noticia> noticias = noticiaService.obterTodasNoticias();
+		List<Noticia> noticias = noticiaService.obterNoticias();
+		List<Noticia> maisLidas = noticiaService.obterMaisLidas();
 		request.setAttribute("noticias", noticias);
+		request.setAttribute("maisLidas", maisLidas);
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

@@ -22,6 +22,10 @@ public class NoticiaService {
 		return noticiaDao.getNoticia(id);
 	}
 	
+	public Noticia lerNoticia(Integer id){
+		return noticiaDao.lerNoticia(id);
+	}
+	
 	public void salvaNoticia(Noticia noticia){
 		noticiaDao.salvarNoticia(noticia);
 			
@@ -35,10 +39,18 @@ public class NoticiaService {
 		noticiaDao.excluirNoticia(id);
 	}
 	
-	public List<Noticia> obterTodasNoticias(){
-		return noticiaDao.obterTodasNoticas();
+	public List<Noticia> obterNoticias(){
+		return noticiaDao.obterNoticias();
 	}
-	public List<Noticia> obterCategoriaNoticias(String categoria){
-		return noticiaDao.obterCategoriaNoticias(categoria);
+	public List<Noticia> obterNoticias(String categoria){
+		return noticiaDao.obterNoticias(categoria);
+	}
+	
+	public List<Noticia> obterMaisLidas(String categoria){
+		return noticiaDao.obterMaisLidas(categoria);
+	}
+	
+	public List<Noticia> obterMaisLidas(){
+		return noticiaDao.obterMaisLidas();
 	}
 }

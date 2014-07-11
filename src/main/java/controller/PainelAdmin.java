@@ -18,7 +18,7 @@ public class PainelAdmin extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		NoticiaService service = NoticiaService.getNoticiaService();
-		List<Noticia> noticias = service.obterTodasNoticias();
+		List<Noticia> noticias = service.obterNoticias();
 		request.setAttribute("noticias", noticias);
 		request.getRequestDispatcher("menuAdmin.jsp").forward(request, response);
 	}

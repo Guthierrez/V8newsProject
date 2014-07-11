@@ -18,7 +18,9 @@ public class Ver extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		NoticiaService noticiaService = NoticiaService.getNoticiaService();
 		String categoria = (String)request.getParameter("categoria");
-		List<Noticia> noticias = noticiaService.obterCategoriaNoticias(categoria);
+		List<Noticia> noticias = noticiaService.obterNoticias(categoria);
+		List<Noticia> maisLidas = noticiaService.obterMaisLidas(categoria);
+		request.setAttribute("maisLidas", maisLidas);
 		request.setAttribute("noticias", noticias);
 		request.getRequestDispatcher(categoria+"/index.jsp").forward(request, response);;
 	}

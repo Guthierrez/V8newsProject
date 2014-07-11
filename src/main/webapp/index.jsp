@@ -87,8 +87,8 @@
 				<h3>Mais lidas da semana</h3>
 				<div class="rodapeDestaques"></div>
 				<ol class="setaMaisLidas">
-					<c:forEach items="${noticias}" var="noticia" begin="0" end="7">	
-						<li><img alt="" src="img/logos/seta.png"><a href="LerNoticia?ID=${noticia.id}">${noticia.nome }</a></li>
+					<c:forEach items="${maisLidas}" var="lida" begin="0" end="7">	
+						<li><img alt="" src="img/logos/seta.png"><a href="LerNoticia?ID=${lida.id}">${lida.nome }</a></li>
 					</c:forEach>
 				</ol>
 			</div>
